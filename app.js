@@ -17,19 +17,14 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   
   const reqNumber = req.body.number;
-  // const previousNumber = (number - 1);
-  // const nextNumber = (number + 1);
 
-  // const apiResponse = (`The number informed is ${number}. The previous of number is ${previousNumber} and the next is ${nextNumber}`);
-  
   const apiResponse = {
     Number: reqNumber,
     PreviousNumber: (reqNumber - 1),
     NextNumber: (reqNumber + 1)
   } 
  
-  res.send(apiResponse); //se for usar este tenho que enviar como objeto{}
-  // res.json(apiResponse) //caso vá enviar um number
+  res.send(apiResponse);
 
 })
 
@@ -42,15 +37,3 @@ app.post('/validatemail', (req, res) => {
   }
   return res.json(`The email informed is invalid. Try again!`);
 })
-
-
-
-//*EX01
-// Crie um endpint que será um post no /. Este post deve receber no body uma propriedade chamada number. A resposta deve ser o antecessor e o próximo numero do recebido. Ex: O post recebe 200. A resposta deve ser 199 e 201
-//*EX02
-// Criar funçao para validar email e se for incorreto avisar.
-
-//*Obs
-//Padrão a partir de agora criar app....
-//Ler doc https://expressjs.com/pt-br/starter/generator.html
-//Proxima aula: Git
