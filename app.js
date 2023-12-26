@@ -9,12 +9,12 @@ app.listen(port, () => {
   console.log(`App listening on port ${port}`)
 })
 
-app.get('/', (req, res) => {
-  const msg = `Hello man!, This app it's working now!`;   
+app.get('/status', (req, res) => {
+  const msg = `Hello!, This app it's working now!`;   
   res.send(msg)
 })
 
-app.post('/', (req, res) => {
+app.post('/calcnumber', (req, res) => {
   
   const reqNumber = req.body.number;
 
